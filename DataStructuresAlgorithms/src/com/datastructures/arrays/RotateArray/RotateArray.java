@@ -2,6 +2,7 @@ package com.datastructures.arrays.RotateArray;
 
 import java.util.Arrays;
 
+
 public class RotateArray
 {
 
@@ -12,6 +13,7 @@ public class RotateArray
         int length = arr.length;
         int rotation = 15;
         int output[] = rotate(arr, length, rotation);
+
 
         System.out.println("Method 1 --------->");
         System.out.println(Arrays.toString(arr));
@@ -28,6 +30,14 @@ public class RotateArray
         System.out.println(Arrays.toString(arr1));
         output = rotateMethodThree(arr, length, rotation);
         System.out.println(Arrays.toString(output));
+
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(output));
+
+        System.out.println(Arrays.toString(arr));
+        output = rotateMethodTwo(arr, length, rotation);
+        System.out.println(Arrays.toString(output));
+
     }
 
     /**
@@ -107,6 +117,7 @@ public class RotateArray
         return arr;
     }
 
+
     /**
      * Method 2: Reverse array
      * 
@@ -141,4 +152,5 @@ public class RotateArray
         return arr;
 
     }
+
 }
