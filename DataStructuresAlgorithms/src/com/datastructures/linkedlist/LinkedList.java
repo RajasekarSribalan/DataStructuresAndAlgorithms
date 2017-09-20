@@ -5,7 +5,9 @@ public class LinkedList {
 	Node head; // Head of the linked list
 
 	/* Each node of the linked list */
+
 	static class Node {
+
 		int data;
 		Node next;
 
@@ -57,4 +59,5 @@ public class LinkedList {
 			}
 		}
 	}
+
 }
