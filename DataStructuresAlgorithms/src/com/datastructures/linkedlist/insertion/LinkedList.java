@@ -53,19 +53,19 @@ public class LinkedList {
 		System.out.println("Inserting a node at the front of the head");
 
 		printLinkedList(linkedList.head);
-		
+
 		System.out.println();
 		System.out.println("Inserting a node at the rear");
 
 		insertAtRear(linkedList, 12);
-		
+
 		printLinkedList(linkedList.head);
-		
+
 		System.out.println();
 		System.out.println("Inserting a node at the rear");
 
 		insertAtRear(linkedList, 125);
-		
+
 		printLinkedList(linkedList.head);
 	}
 
@@ -77,9 +77,9 @@ public class LinkedList {
 		while (head.next != null) {
 			head = head.next;
 		}
-		
+
 		head.next = newNode;
-		
+
 	}
 
 	private static void insertAtFront(LinkedList linkedList, int data) {
