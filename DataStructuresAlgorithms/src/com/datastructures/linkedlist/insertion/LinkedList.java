@@ -67,6 +67,35 @@ public class LinkedList {
 		insertAtRear(linkedList, 125);
 
 		printLinkedList(linkedList.head);
+
+		System.out.println();
+		System.out.println("Inserting a node 10 after the node 2");
+
+		insertAtMiddle(linkedList, 2, 10);
+
+		printLinkedList(linkedList.head);
+
+		System.out.println();
+		System.out.println("Inserting a node 100 after the node 125");
+
+		insertAtMiddle(linkedList, 125, 100);
+
+		printLinkedList(linkedList.head);
+	}
+
+	private static void insertAtMiddle(LinkedList linkedList, int node, int data) {
+		Node newNode = new Node(data);
+		Node head = linkedList.head;
+
+		while (head != null) {
+
+			if (head.data == node) {
+
+				newNode.next = head.next;
+				head.next = newNode;
+			}
+			head = head.next;
+		}
 	}
 
 	private static void insertAtRear(LinkedList linkedList, int data) {
