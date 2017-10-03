@@ -47,14 +47,14 @@ public class LinkedList {
 
 		printLinkedList(linkedList.head);
 
-		deleteAtFront(linkedList, 5);
-
 		System.out.println();
-		System.out.println("Inserting a node at the front of the head");
+		System.out.println("delete a node at the front of the head");
+		
+		deleteAtFront(linkedList);
 
 		printLinkedList(linkedList.head);
 
-		System.out.println();
+		/*System.out.println();
 		System.out.println("Inserting a node at the rear");
 
 		deleteAtRear(linkedList, 12);
@@ -80,7 +80,7 @@ public class LinkedList {
 
 		deleteMiddle(linkedList, 125, 100);
 
-		printLinkedList(linkedList.head);
+		printLinkedList(linkedList.head);*/
 	}
 
 	private static void deleteMiddle(LinkedList linkedList, int node, int data) {
@@ -111,11 +111,9 @@ public class LinkedList {
 
 	}
 
-	private static void deleteAtFront(LinkedList linkedList, int data) {
+	private static void deleteAtFront(LinkedList linkedList) {
 
-		Node newNode = new Node(data);
-		newNode.next = linkedList.head;
-		linkedList.head = newNode;
+		linkedList.head = linkedList.head.next;
 
 	}
 
