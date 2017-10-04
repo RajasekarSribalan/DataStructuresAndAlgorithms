@@ -54,8 +54,10 @@ public class LinkedList {
 
 		printLinkedList(linkedList.head);
 
+
 		System.out.println();
-		System.out.println("delete a node at the rear");
+		System.out.println("Inserting a node at the rear");
+
 
 		deleteAtRear(linkedList);
 
