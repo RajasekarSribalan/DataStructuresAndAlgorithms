@@ -39,85 +39,88 @@ public class LinkedList {
 		// Third Node
 		Node thirdNode = new Node(3);
 
+		// Fourth Node
+		Node fourthNode = new Node(4);
+
+		// Fifth Node
+		Node fiveNode = new Node(5);
+
 		// Attach the HEad node with second node
 		linkedList.head.next = secondNode;
 
 		// Attach the second Node with Third node.
 		secondNode.next = thirdNode;
 
+		// Attach the second Node with Third node.
+		thirdNode.next = fourthNode;
+
+		// Attach the second Node with Third node.
+		fourthNode.next = fiveNode;
+
 		printLinkedList(linkedList.head);
 
 		System.out.println();
 		System.out.println("delete a node at the front of the head");
-		
+
 		deleteAtFront(linkedList);
 
 		printLinkedList(linkedList.head);
 
-
 		System.out.println();
-		System.out.println("Inserting a node at the rear");
-
+		System.out.println("delet a node at the rear");
 
 		deleteAtRear(linkedList);
 
 		printLinkedList(linkedList.head);
 
 		System.out.println();
-		System.out.println("delete a node at the rear");
+		System.out.println("delete 3 node");
 
-		deleteAtRear(linkedList);
-
-		printLinkedList(linkedList.head);
-
-		/*System.out.println();
-		System.out.println("Inserting a node 10 after the node 2");
-
-		deleteMiddle(linkedList, 2, 10);
+		deleteMiddle(linkedList, 3);
 
 		printLinkedList(linkedList.head);
-
 		System.out.println();
-		System.out.println("Inserting a node 100 after the node 125");
+		System.out.println("delete 4 node");
+		
+		deleteMiddle(linkedList, 4);
+		
+		printLinkedList(linkedList.head);
 
-		deleteMiddle(linkedList, 125, 100);
-
-		printLinkedList(linkedList.head);*/
 	}
 
-	private static void deleteMiddle(LinkedList linkedList, int node, int data) {
-		Node newNode = new Node(data);
+	private static void deleteMiddle(LinkedList linkedList, int node) {
 		Node head = linkedList.head;
+		Node prev = null;
 
 		while (head != null) {
+			prev = head;
+			if (head.next.data == node) {
 
-			if (head.data == node) {
-
-				newNode.next = head.next;
-				head.next = newNode;
+				prev.next = head.next.next;
+				break;
 			}
 			head = head.next;
+			
 		}
 	}
 
 	private static void deleteAtRear(LinkedList linkedList) {
 		// TODO Auto-generated method stub
 		Node head = linkedList.head;
-		
-		if(head.next == null){
+
+		if (head.next == null) {
 			System.out.println("Only one node available.Hence not deleting");
 		}
 
 		while (head.next != null) {
-			
-			if(head.next.next == null){
+
+			if (head.next.next == null) {
 				head.next = null;
-			}else{
+			} else {
 				head = head.next;
 			}
-			
-		}
 
+		}
 
 	}
 
