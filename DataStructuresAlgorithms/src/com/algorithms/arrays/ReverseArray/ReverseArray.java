@@ -1,4 +1,4 @@
-package com.datastructures.arrays.ReverseArray;
+package com.algorithms.arrays.ReverseArray;
 
 import java.util.Arrays;
 

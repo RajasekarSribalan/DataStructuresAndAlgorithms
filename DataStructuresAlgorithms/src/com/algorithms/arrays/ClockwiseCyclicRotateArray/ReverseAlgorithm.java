@@ -1,4 +1,4 @@
-package com.datastructures.arrays.ClockwiseCyclicRotateArray;
+package com.algorithms.arrays.ClockwiseCyclicRotateArray;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.datastructures.arrays.RotateArray;
+package com.algorithms.arrays.RotateArray;
 
 import java.util.Arrays;
 

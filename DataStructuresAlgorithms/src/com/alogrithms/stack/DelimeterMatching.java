@@ -1,4 +1,4 @@
-package com.datastructures.stack.algorithms;
+package com.alogrithms.stack;
 
 import com.datastructures.stack.Stack_Char;
 
