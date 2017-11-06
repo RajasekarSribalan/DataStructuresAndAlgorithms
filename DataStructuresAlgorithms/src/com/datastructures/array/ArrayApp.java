@@ -7,13 +7,25 @@ public class ArrayApp {
 	public static void main(String[] args) {
 
 		// creating an int array with initial size as 100
-		int[] array = new int[100];
+		int[] array = new int[10];
 
 		// inserting 10 data in the array
 		insertData(10, array);
 
 		// search a number in the array
 		searchData(5, array);
+
+		// delete a number in the array and shift the right side data
+		deleteData(5, array);
+
+		// delete a number in the array and shift the right side data
+		deleteData(6, array);
+
+		// printing array
+		printArray(array);
+
+		// Insert in middle and shift the array
+		
 	}
 
 	/**
@@ -46,6 +58,31 @@ public class ArrayApp {
 
 		for (int i = 0; i < series; i++) {
 			array[i] = i + 1;
+		}
+
+		printArray(array);
+
+	}
+
+	/**
+	 * 
+	 * @param data
+	 * @param array
+	 */
+	private static void deleteData(int data, int[] array) {
+
+		System.out.println("Deleting " + data + " from array");
+		for (int i = 0; i < array.length; i++) {
+
+			if (array[i] == data) {
+				while (i < array.length - 1) {
+					array[i] = array[i + 1];
+					i++;
+				}
+				array[i] = 0;
+				break;
+			}
+
 		}
 
 		printArray(array);
