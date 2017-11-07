@@ -24,8 +24,25 @@ public class ArrayApp {
 		// printing array
 		printArray(array);
 
-		// Insert in middle and shift the array
-		
+		// Insert data 4 at index 3 and shift the array
+		insertAtIndex(3, 14, array);
+
+		// Insert data 41 at index 3 and shift the array
+		insertAtIndex(3, 41, array);
+
+	}
+
+	private static void insertAtIndex(int index, int data, int[] array) {
+
+		int temp = 0;
+		for (int i = index; i < array.length; i++) {
+			temp = array[i];
+			array[i] = data;
+			data = temp;
+		}
+
+		printArray(array);
+
 	}
 
 	/**
