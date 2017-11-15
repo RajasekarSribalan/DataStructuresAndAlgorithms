@@ -7,19 +7,29 @@ public class BinarySearch
 
     public static void main(String[] args)
     {
-        int[] array = new int[15];
-        int data = 1;
-        for (int i = 0; i < array.length; i++)
-        {
-            array[i] = data;
-            data++;
-        }
-        printArray(array);
-        int output = binarySearch(array, 5);
-        System.out.printf("The data %d is found in the %d th index \n", 5, output);
+        int[] array =
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 };
 
-        output = binarySearch(array, 17);
-        System.out.printf("The data %d is found in the %d th index", 17, output);
+        printArray(array);
+        int searchKey = 7;
+        int output = binarySearch(array, searchKey);
+        System.out.printf("The data %d is found in the %d th index \n", searchKey, output);
+
+        searchKey = 17;
+        output = binarySearch(array, searchKey);
+        System.out.printf("The data %d is found in the %d th index \n", searchKey, output);
+
+        // Binary Search Using recursion
+
+        int[] arraytwo =
+        { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 };
+
+        int start = 0;
+        int end = arraytwo.length - 1;
+        searchKey = 7;
+        printArray(array);
+        output = recursiveBinarySearch(arraytwo, searchKey, start, end);
+        System.out.printf("The data %d is found in the %d th index \n", searchKey, output);
 
     }
 
@@ -52,6 +62,32 @@ public class BinarySearch
                 }
             }
         }
+
+    }
+
+    private static int recursiveBinarySearch(int[] arraytwo, int searchKey, int start, int end)
+    {
+
+        int mid = (start + end) / 2;
+
+        if (searchKey == arraytwo[mid])
+        {
+            return mid;
+        }
+        else if (start > end)
+        {
+            return arraytwo.length; // Search Key is not found
+        }
+        else if (searchKey < arraytwo[mid])
+        {
+            return recursiveBinarySearch(arraytwo, searchKey, start, mid - 1);
+        }
+        else if (searchKey > arraytwo[mid])
+        {
+            return recursiveBinarySearch(arraytwo, searchKey, mid + 1, end);
+        }
+
+        return arraytwo.length;
 
     }
 
