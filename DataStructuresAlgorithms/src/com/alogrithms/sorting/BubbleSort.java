@@ -13,6 +13,9 @@ public class BubbleSort
         bubbleSortAscending(array);
         printArray("Bubble sort in ascending order", array);
 
+        bubbleSortDescending(array);
+        printArray("Bubble sort in descending order", array);
+
     }
 
     /**
@@ -28,6 +31,30 @@ public class BubbleSort
             {
 
                 if (array[i] > array[i + 1])
+                {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                }
+            }
+            n--;
+        }
+
+    }
+
+    /**
+     * @param array
+     */
+    private static void bubbleSortDescending(int[] array)
+    {
+        int n = array.length;
+
+        while (n > 0)
+        {
+            for (int i = 0; i < n - 1; i++)
+            {
+
+                if (array[i] < array[i + 1])
                 {
                     int temp = array[i];
                     array[i] = array[i + 1];
