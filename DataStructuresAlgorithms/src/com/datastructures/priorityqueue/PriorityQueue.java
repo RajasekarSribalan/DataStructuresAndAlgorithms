@@ -3,11 +3,9 @@ package com.datastructures.priorityqueue;
 public class PriorityQueue {
 
 	private int[] array;
-	private int size;
 	private int noOfItems;
 
 	public PriorityQueue(int size) {
-		this.size = size;
 		array = new int[size];
 		noOfItems = 0;
 	}
@@ -33,11 +31,26 @@ public class PriorityQueue {
 		}
 	}
 
+	public void remove() {
+		array[--noOfItems] = 0;
+	}
+
+	public void printArray() {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + ",");
+		}
+	}
+
 	public static void main(String[] args) {
 		PriorityQueue priorityQueue = new PriorityQueue(10);
 		priorityQueue.insert(1);
 		priorityQueue.insert(3);
 		priorityQueue.insert(10);
 		priorityQueue.insert(2);
+		priorityQueue.printArray();
+		System.out.println("\n");
+		priorityQueue.remove();
+		priorityQueue.remove();
+		priorityQueue.printArray();
 	}
 }
