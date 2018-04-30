@@ -1,5 +1,7 @@
 package datastructures.stack;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Raj
@@ -47,5 +49,9 @@ public class Stack_Integer {
 
 	public int top() {
 		return stack[top];
+	}
+	
+	public void display() {
+		System.out.println(Arrays.toString(stack));
 	}
 }
