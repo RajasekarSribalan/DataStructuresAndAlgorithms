@@ -1,14 +1,16 @@
 package datastructures.stack;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Raj
  * 
- * This is a stack based on Integer.
+ *         This is a stack based on Integer.
  * 
- * It has five operations - push,push,peek,top,is Empty
+ *         It has five operations - push,push,peek,top,is Empty
  * 
- * Complexity - O(1)
+ *         Complexity - O(1)
  *
  */
 public class Stack_Integer {
@@ -47,5 +49,9 @@ public class Stack_Integer {
 
 	public int top() {
 		return stack[top];
+	}
+
+	public void display() {
+		System.out.println(Arrays.toString(stack));
 	}
 }
