@@ -1,5 +1,7 @@
 package datastructures.stack;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Raj
@@ -66,6 +68,10 @@ public class Stack_String{
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void display() {
+		System.out.println(Arrays.toString(stack));
 	}
 
 }
