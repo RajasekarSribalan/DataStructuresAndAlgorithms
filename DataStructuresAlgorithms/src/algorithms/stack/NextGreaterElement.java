@@ -49,13 +49,26 @@ public class NextGreaterElement {
 		 */
 		int[] inputArray = { 4, 5, 2, 25 };
 		Stack_Integer outputArray = nextGreaterElement(inputArray);
-		System.out.println("Input Array : "+Arrays.toString(inputArray));
+		System.out.println("Using two stacks - Input Array : "+Arrays.toString(inputArray));
 		outputArray.display();
 		
 		int[] inputArray1 = { 12, 6, 7, 13 };
 		outputArray = nextGreaterElement(inputArray1);
-		System.out.println("Input Array : "+Arrays.toString(inputArray1));
+		System.out.println("Using two stacks - Input Array : "+Arrays.toString(inputArray1));
 		outputArray.display();
+		
+		System.out.println("*********************************** \n");
+		/**
+		 * Using single stack
+		 */
+		
+		int[] inputArray2 = { 4, 5, 2, 25 };
+		System.out.println("Using single stack - Input Array : "+Arrays.toString(inputArray2));
+		outputArray = nextGreaterElementUsingSingleStack(inputArray2);
+		
+		int[] inputArray3 = { 12, 6, 7, 13 };
+		System.out.println("Using single stack - Input Array : "+Arrays.toString(inputArray3));
+		outputArray = nextGreaterElementUsingSingleStack(inputArray3);
 	}
 
 	/**
@@ -87,6 +100,44 @@ public class NextGreaterElement {
 					nextGreaterElementStack.push(-1);
 				}
 				elementStack.push(data);
+			}
+
+		}
+		return nextGreaterElementStack;
+	}
+
+	
+	/**
+	 * Method nextGreaterElementUsingSingleStack
+	 * 
+	 * This method uses one stack
+	 * @param inputArray
+	 * @return
+	 * @throws Exception
+	 */
+	private static Stack_Integer nextGreaterElementUsingSingleStack(int[] inputArray) throws Exception {
+
+		Stack_Integer elementStack = new Stack_Integer(inputArray.length);
+		Stack_Integer nextGreaterElementStack = new Stack_Integer(inputArray.length);
+		int next = -1;
+		for (int i = 0; i < inputArray.length; i++) {
+
+			int data = inputArray[i];
+			if (elementStack.isEmpty()) {
+				elementStack.push(data);
+				System.out.println(data + "--> " + next);
+			} else {
+				if (elementStack.peek() > data && next == -1) {
+					next = elementStack.peek();
+				} else if (elementStack.peek() > data && next > data) {
+					next = elementStack.peek();
+				} else if (next > data) {
+					// do nothing because next will be same
+				} else {
+					next = -1;
+				}
+				elementStack.push(data);
+				System.out.println(data + "--> " + next);
 			}
 
 		}
