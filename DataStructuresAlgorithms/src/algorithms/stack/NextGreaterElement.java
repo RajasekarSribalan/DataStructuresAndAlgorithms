@@ -43,6 +43,10 @@ public class NextGreaterElement {
 	 */
 	public static void main(String[] args) throws Exception {
 
+		
+		/**
+		 * Using two stacks
+		 */
 		int[] inputArray = { 4, 5, 2, 25 };
 		Stack_Integer outputArray = nextGreaterElement(inputArray);
 		System.out.println("Input Array : "+Arrays.toString(inputArray));
@@ -57,6 +61,7 @@ public class NextGreaterElement {
 	/**
 	 * Method nextGreaterElement
 	 * 
+	 * This method uses two stacks
 	 * @param inputArray
 	 * @return
 	 * @throws Exception
