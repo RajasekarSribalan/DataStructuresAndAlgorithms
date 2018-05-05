@@ -51,6 +51,10 @@ public class Stack_Integer {
 		return stack[top];
 	}
 
+	public int peek() {
+		return stack[top];
+	}
+
 	public void display() {
 		System.out.println(Arrays.toString(stack));
 	}
