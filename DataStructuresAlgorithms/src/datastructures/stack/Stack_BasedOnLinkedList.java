@@ -33,7 +33,9 @@ public class Stack_BasedOnLinkedList {
 	//Pop
 	public int pop() {
 		int temp = head.data;
-		this.head = head.next;
+		if (null != head) {
+			this.head = head.next;
+		}
 		size--;
 		return temp;
 	}
