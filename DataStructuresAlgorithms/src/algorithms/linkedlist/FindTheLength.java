@@ -1,7 +1,5 @@
 package algorithms.linkedlist;
 
-import algorithms.linkedlist.DeleteLinkedList.Node;
-
 public class FindTheLength {
 
 	Node head;
