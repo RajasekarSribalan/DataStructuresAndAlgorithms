@@ -100,14 +100,14 @@ public class FindNthNodeFromEnd {
 	private static int findNthNodeFromEnd(Node head, int N) {
 
 		int length = getLength(head);
-
-		int index = length - N + 1;
-
-		if (index < 1) {
+		
+		int index = length -N + 1;
+		
+		if(index < 1) {
 			System.out.println("Invalid node index");
 			return 0;
 		}
-
+		
 		int count = 1;
 
 		while (head != null) {
@@ -128,7 +128,6 @@ public class FindNthNodeFromEnd {
 			length++;
 			head = head.next;
 		}
-
 		return length;
 	}
 
